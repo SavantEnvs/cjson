@@ -1,0 +1,10 @@
+project: savantenvs/cjson
+target: cjson_read_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/cjson_read_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/cjson_read_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/fuzzing/json.dict
+    timeout: 5
